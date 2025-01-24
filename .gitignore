@@ -1,0 +1,11 @@
+# Виртуальное окружение и кеш
+venv
+__pycache__
+.pytest_cache
+
+# Конфиги
+.vscode
+
+# Отчеты
+results
+allure-report
