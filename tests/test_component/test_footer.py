@@ -19,7 +19,7 @@ base_url = "https://www.qa-practice.com"
         (FooterLocators.copyright_link, f"{base_url}/"),
     ],
 )
-def test_sidebar_navigation(page: Page, link_selector: str, expected_url: str):
+def test_footer_navigation(page: Page, link_selector: str, expected_url: str):
     sidebar = FooterComponent(page)
     with allure.step("Открываем сайт"):
         sidebar.open()
