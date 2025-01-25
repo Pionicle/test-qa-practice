@@ -1,8 +1,8 @@
 from pages.base_page import BasePage
 
 
-class FooterLocators:
-    """Хранит локаторы компонента."""
+class FooterComponentLocators:
+    """Хранит локаторы для футера."""
 
     # Локаторы
     contact = "a[href='/contact/']"
@@ -11,7 +11,12 @@ class FooterLocators:
 
 
 class FooterComponent(BasePage):
-    """Футер."""
+    """Представляет футер на сайте."""
 
     def open(self):
+        """
+        Открывает главную страницу.
+
+        Использует метод родительского класса для перехода по URL главной страницы.
+        """
         return super().open("https://www.qa-practice.com")
