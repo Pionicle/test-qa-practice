@@ -19,6 +19,12 @@ def test_password_input_field(
     page: Page,
     text: str,
 ):
+    """Тестирует корректный ввод пароля.
+
+    Args:
+        page (Page): Объект страницы Playwright.
+        text (str): Корректный пароль для ввода.
+    """
     input_page = InputPasswordPage(page)
 
     with allure.step("Открываем страницу"):
@@ -42,14 +48,8 @@ def test_password_input_field(
     "text, text_error",
     [
         ("1", "Low password complexity"),
-        (
-            "привет",
-            "Low password complexity",
-        ),
-        (
-            "hello _",
-            "Low password complexity",
-        ),
+        ("привет", "Low password complexity"),
+        ("hello _", "Low password complexity"),
     ],
 )
 def test_error_password_input_field(
@@ -57,6 +57,13 @@ def test_error_password_input_field(
     text: str,
     text_error: str,
 ):
+    """Тестирует неправильный ввод пароля.
+
+    Args:
+        page (Page): Объект страницы Playwright.
+        text (str): Неправильный пароль для ввода.
+        text_error (str): Ожидаемое сообщение об ошибке.
+    """
     input_page = InputPasswordPage(page)
 
     with allure.step("Открываем страницу"):

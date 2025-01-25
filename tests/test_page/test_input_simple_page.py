@@ -24,6 +24,12 @@ def test_simple_input_field(
     page: Page,
     text: str,
 ):
+    """Тестирует корректный ввод текста.
+
+    Args:
+        page (Page): Объект страницы Playwright.
+        text (str): Корректный текст для ввода.
+    """
     input_page = InputSimplePage(page)
 
     with allure.step("Открываем страницу"):
@@ -66,6 +72,13 @@ def test_error_simple_input_field(
     text: str,
     text_error: str,
 ):
+    """Тестирует неправильный ввод текста.
+
+    Args:
+        page (Page): Объект страницы Playwright.
+        text (str): Неправильный текст для ввода.
+        text_error (str): Ожидаемое сообщение об ошибке.
+    """
     input_page = InputSimplePage(page)
 
     with allure.step("Открываем страницу"):

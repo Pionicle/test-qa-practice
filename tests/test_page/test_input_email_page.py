@@ -22,6 +22,12 @@ def test_email_input_field(
     page: Page,
     text: str,
 ):
+    """Тестирует корректный ввод электронной почты.
+
+    Args:
+        page (Page): Объект страницы Playwright.
+        text (str): Корректный адрес электронной почты для ввода.
+    """
     input_page = InputEmailPage(page)
 
     with allure.step("Открываем страницу"):
@@ -55,6 +61,13 @@ def test_error_email_input_field(
     text: str,
     text_error: str,
 ):
+    """Тестирует неправильный ввод электронной почты.
+
+    Args:
+        page (Page): Объект страницы Playwright.
+        text (str): Неправильный адрес электронной почты для ввода.
+        text_error (str): Ожидаемое сообщение об ошибке.
+    """
     input_page = InputEmailPage(page)
 
     with allure.step("Открываем страницу"):
