@@ -38,6 +38,16 @@ class BasePage:
         """
         self.page.click(selector)
 
+    def fill(self, selector: str, text: str):
+        """
+        Заполняет элемент текстом.
+
+        Args:
+            selector (str): Селектор элемента, который нужно заполнить текстом.
+            text (str): Текст для ввода в элемент.
+        """
+        self.page.fill(selector, text)
+
     def is_visible(self, selector: str) -> bool:
         """
         Проверяет, виден ли элемент на странице.
