@@ -8,10 +8,10 @@ class SidebarLocators:
     logo = "a[href='/']"
     dropdown_button = "a[href='javascript:;']"
 
-    # Локатор состояния меню
+    # Состояния меню
     menu_item = "li.has-sub.active.expand"
 
-    # Локаторы меню
+    # Элементы меню
     input = "ul.sub-menu a[href='/elements/input']"
     buttons = "ul.sub-menu a[href='/elements/button']"
     checkbox = "ul.sub-menu a[href='/elements/checkbox']"
@@ -23,6 +23,9 @@ class SidebarLocators:
     iframes = "ul.sub-menu a[href='/elements/iframe/iframe_page']"
     pop_up = "ul.sub-menu a[href='/elements/popup']"
 
+    # Заголовок страницы
+    title = "h1"
+
 
 class SidebarComponent(BasePage):
     """Боковое меню."""
@@ -30,7 +33,7 @@ class SidebarComponent(BasePage):
     def open(self):
         return super().open("https://www.qa-practice.com")
 
-    def open_sidebar(self):
+    def open_menu(self):
         """Открывает меню."""
         if not self.is_visible(SidebarLocators.menu_item):
             self.click(SidebarLocators.dropdown_button)

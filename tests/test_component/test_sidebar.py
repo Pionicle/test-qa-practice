@@ -32,7 +32,7 @@ def test_sidebar_navigation(page: Page, link_selector: str, expected_url: str):
         sidebar.open()
 
     with allure.step("Открываем меню"):
-        sidebar.open_sidebar()
+        sidebar.open_menu()
 
     with allure.step("Нажимаем на пункт меню"):
         sidebar.click(link_selector)
