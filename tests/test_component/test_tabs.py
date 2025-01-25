@@ -11,6 +11,15 @@ from components.tabs import TabsComponent
     "url_page_with_tabs",
     [
         ("https://www.qa-practice.com/elements/input/simple"),
+        ("https://www.qa-practice.com/elements/button/simple"),
+        ("https://www.qa-practice.com/elements/checkbox/single_checkbox"),
+        ("https://www.qa-practice.com/elements/select/single_select"),
+        ("https://www.qa-practice.com/elements/new_tab/link"),
+        ("https://www.qa-practice.com/elements/textarea/single"),
+        ("https://www.qa-practice.com/elements/alert/alert"),
+        ("https://www.qa-practice.com/elements/dragndrop/boxes"),
+        ("https://www.qa-practice.com/elements/iframe/iframe_page"),
+        ("https://www.qa-practice.com/elements/popup/modal"),
     ],
 )
 def test_tabs_navigation(page: Page, url_page_with_tabs: str):
