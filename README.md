@@ -1,12 +1,24 @@
-# **Тестирование сайта effective-mobile.ru**
+# **Тестирование сайта [qa-practice.com](https://www.qa-practice.com/)**
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue.svg)
 ![Playwright](https://img.shields.io/badge/Playwright-1.49-darkgreen.svg)
 ![Allure](https://img.shields.io/badge/Allure-2.13-yellow.svg)
 ![Pytest](https://img.shields.io/badge/Pytest-8.3.4-red.svg)
 
-Проект предназначен для автоматизированного тестирования сайта [effective-mobile.ru](https://effective-mobile.ru) с использованием **Playwright**, **Pytest** и **Allure**.  
-**Цель** - тестирование, проверяющие переход по всем блокам по клику (О нас, Контакты и пр.)
+Проект предназначен для автоматизированного тестирования сайта [qa-practice.com](https://www.qa-practice.com) с использованием **Playwright**, **Pytest** и **Allure**.
+
+**Цель** тестирование UI компонентов:
+
+- Inputs
+- Buttons
+- Checkbox
+- Select
+- New tab
+- Text area
+- Alerts
+- Drag and Drop
+- Iframes
+- Pop-up
 
 ---
 
@@ -77,7 +89,7 @@ brew install allure
 2. Запустите тесты:
 
 ```sh
-pytest -v -s --alluredir=results
+pytest -v -s
 allure generate results --clean -o allure-report
 allure open allure-report
 ```
@@ -86,39 +98,26 @@ allure open allure-report
 
 ## **Запуск через Docker**
 
-1. Соберите Docker-образ (2,61 Гб):
-
-```sh
-docker build -t test-qa-practice .
-```
-
-2. Запустите контейнер и дождитесь окончания тестов (~1 мин.):
-
-```sh
-docker run -d -p {свободный_порт}:5952 test-qa-practice
-```
-
-3. Передите по ссылке http://localhost:{свободный_порт}
-4. Пример `docker run -d -p 5952:5952 test-qa-practice` - http://localhost:5952
-
 ---
 
 ## **Структура проекта**
 
 ```
 test-qa-practice/
-│── tests/
-│   ├── test_home_page.py   # Тесты главной страницы
+│── components/            # Компоненты приложения
 │
-│── pages/
-│   ├── home_page.py       # Главная страница
+│── pages/                 # Страницы приложения
 │
-│── conftest.py            # Фикстуры pytest
-│── requirements.txt       # Зависимости
-│── Dockerfile             # Описание проекта для сборки Docker-образа
-│── README.md
-│── .dockerignore
-│── .gitignore
+│── tests/                 # Основная папка с тестами
+│   ├── tests_components/   # Тесты компонентов
+│   ├── test_page/         # Тесты страниц
+│
+│── conftest.py            # Фикстуры для pytest
+│── requirements.txt       # Зависимости проекта
+│── README.md              # Документация проекта
+│── .gitignore             # Игнорируемые файлы для Git
+│── pytest.ini             # Конфигурация для pytest
+
 ```
 
 ---
