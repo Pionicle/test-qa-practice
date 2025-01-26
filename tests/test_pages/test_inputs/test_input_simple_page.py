@@ -2,9 +2,10 @@ from playwright.sync_api import Page
 import pytest
 import allure
 
-from pages.input_simple_page import InputSimplePage
+from pages.inputs.input_simple_page import InputSimplePage
 
 
+@allure.feature("Inputs")
 @allure.title("Корректный ввод и отправка текста")
 @allure.description(
     "Тест проверяет правильный ввод текста, его отправку и результат сообщения."
@@ -45,6 +46,7 @@ def test_simple_input_field(
         assert input_page.get_text_result() == text
 
 
+@allure.feature("Inputs")
 @allure.title("Неправильный ввод и отправка текста")
 @allure.description(
     "Тест проверяет неправильный ввод текста, его отправку и результат сообщения."

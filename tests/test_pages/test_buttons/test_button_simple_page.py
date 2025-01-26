@@ -2,13 +2,14 @@ from playwright.sync_api import Page
 import pytest
 import allure
 
-from pages.button_simple_page import SimpleButtonPage
+from pages.buttons.button_simple_page import SimpleButtonPage
 
 
-@allure.title("Нажатие на кнопку ссылку")
-@allure.description("Тест проверяет нажатие на кнопку ссылку и результат.")
+@allure.feature("Buttons")
+@allure.title("Нажатие на кнопку")
+@allure.description("Тест проверяет нажатие на кнопку и результат.")
 @pytest.mark.parametrize(
-    "click_button, result",
+    "click, result",
     [
         (
             True,
@@ -22,22 +23,22 @@ from pages.button_simple_page import SimpleButtonPage
 )
 def test_single_checkbox(
     page: Page,
-    click_button: bool,
+    click: bool,
     result: str,
 ):
-    """Тест проверяет функциональность кнопки-ссылки.
+    """Тест проверяет функциональность кнопки.
 
     Args:
         page (Page): Объект страницы Playwright.
-        click_button (bool): Указывает, следует ли нажимать на кнопку-ссылку.
+        click (bool): Указывает, следует ли нажимать на кнопку.
         result (str): Ожидаемый текст результата после нажатия на кнопку.
     """
     simple_button_page = SimpleButtonPage(page)
     with allure.step("Открываем страницу"):
         simple_button_page.open()
 
-    with allure.step("Нажимаем на кнопку ссылку"):
-        if click_button:
+    with allure.step("Нажимаем на кнопку"):
+        if click:
             simple_button_page.click_button()
 
     with allure.step("Проверяем результат"):

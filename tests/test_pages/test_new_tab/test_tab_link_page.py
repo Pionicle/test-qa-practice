@@ -2,7 +2,7 @@ from playwright.sync_api import Page
 import pytest
 import allure
 
-from pages.tab_link_page import LinkTabPage, NewTabPage
+from pages.new_tab.tab_link_page import LinkTabPage, NewTabPage
 
 
 @allure.title("Открытие вкладки на новой странице")

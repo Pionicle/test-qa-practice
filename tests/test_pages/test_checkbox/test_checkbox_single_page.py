@@ -2,9 +2,11 @@ from playwright.sync_api import Page
 import pytest
 import allure
 
-from pages.checkbox_single_page import SingleCheckboxPage
+from pages.checkbox.checkbox_single_page import SingleCheckboxPage
 
 
+@allure.feature("New tab")
+@allure.feature("Checkbox")
 @allure.title("Нажатие на один чекбокс")
 @allure.description("Тест проверяет нажатие на один чекбокс и проверяет результат.")
 @pytest.mark.parametrize(

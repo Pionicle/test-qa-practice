@@ -2,9 +2,10 @@ from playwright.sync_api import Page
 import pytest
 import allure
 
-from pages.tab_button_page import ButtonTabPage, NewTabPage
+from pages.new_tab.tab_button_page import ButtonTabPage, NewTabPage
 
 
+@allure.feature("New tab")
 @allure.title("Открытие вкладки на новой странице")
 @allure.description(
     "Тест проверяет открытие вкладки в новой странице и результат сообщения на новой странице."

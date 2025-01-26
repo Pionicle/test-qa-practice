@@ -2,9 +2,10 @@ from playwright.sync_api import Page
 import pytest
 import allure
 
-from pages.select_single_page import SingleSelectPage
+from pages.select.select_single_page import SingleSelectPage
 
 
+@allure.feature("Select")
 @allure.title("Выбор опции в раскрывающемся списке")
 @allure.description(
     "Тест проверяет выбор опции в раскрывающемся списке, его отправку и результат сообщения."

@@ -2,9 +2,10 @@ from playwright.sync_api import Page
 import pytest
 import allure
 import random
-from pages.select_mult_page import MultSelectPage
+from pages.select.select_mult_page import MultSelectPage
 
 
+@allure.feature("Select")
 @allure.title("Выбор опций в нескольких раскрывающихся списках")
 @allure.description(
     "Тест проверяет выбор опций в нескольких раскрывающихся списках, их отправку и результат сообщения."

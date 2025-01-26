@@ -2,9 +2,10 @@ from playwright.sync_api import Page
 import pytest
 import allure
 
-from pages.checkbox_mult_page import MultCheckboxPage
+from pages.checkbox.checkbox_mult_page import MultCheckboxPage
 
 
+@allure.feature("Checkbox")
 @allure.title("Нажатие на чекбоксы")
 @allure.description("Тест проверяет нажатие на чекбоксы и проверяет результат.")
 @pytest.mark.parametrize(

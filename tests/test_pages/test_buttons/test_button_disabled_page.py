@@ -2,9 +2,10 @@ from playwright.sync_api import Page
 import pytest
 import allure
 
-from pages.button_disabled_page import DisabledButtonPage
+from pages.buttons.button_disabled_page import DisabledButtonPage
 
 
+@allure.feature("Buttons")
 @allure.title("Нажатие на неактивную кнопку")
 @allure.description("Тест проверяет нажатие на неактивную кнопку и результат.")
 @pytest.mark.parametrize(
